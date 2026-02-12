@@ -205,8 +205,13 @@ function getReport(lang = "en") {
 
 // --- Get user-facing report sentence in the selected language ---
 function getExplanation(lang = "en") {
-    console.log("Generating explanation in language:", lang);
-    return "";
+    const explanations = {
+        en: "This lens makes contact information interactive, allowing you to click to call or email.",
+        pt: "Esta lente torna as informações de contato interativas, permitindo que você clique para ligar ou enviar um e-mail.",
+        es: "Esta lente hace que la información de contacto sea interactiva, permitiéndole hacer clic para llamar o enviar un correo electrónico.",
+        da: "Denne linse gør kontaktoplysninger interaktive, så du kan klikke for at ringe eller sende en e-mail.",
+    };
+    return explanations[lang] || explanations.en;
 }
 
 // --- Exported API ---
